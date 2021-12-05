@@ -1,0 +1,9 @@
+{
+  "name": "gccgce",
+  "version": "1.0.0",
+  "description": "This GAS just changes the color of Google calendar events.",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/cowai/gccgce.git",
+  "license": "MIT",
+  "private": true
+}
