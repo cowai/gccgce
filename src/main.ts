@@ -1,6 +1,6 @@
 function updateEventColor() {
-  const timeMinDate = new Date();
-  timeMinDate.setHours(timeMinDate.getHours() - 2);
+  const timeMinDate = new Date()
+  timeMinDate.setHours(timeMinDate.getHours() - 2)
   const optionalArgs = {
     // timeMin: dayjs().subtract(15, 'minute').format(),
     timeMin: timeMinDate.toISOString(),
@@ -8,27 +8,27 @@ function updateEventColor() {
     singleEvents: true,
     maxResults: 5,
     orderBy: 'startTime',
-  };
-  const calendarId = 'primary';
+  }
+  const calendarId = 'primary'
 
-  const events = Calendar.Events?.list(calendarId, optionalArgs);
+  const events = Calendar.Events?.list(calendarId, optionalArgs)
   events?.items?.forEach((event: GoogleAppsScript.Calendar.Schema.Event) => {
     if (!event.colorId) {
-      event.colorId = colorBySummary(event.summary);
-      Calendar.Events?.update(event, calendarId, event.id!);
+      event.colorId = colorBySummary(event.summary)
+      Calendar.Events?.update(event, calendarId, event.id!)
     }
-  });
+  })
 }
 
 function colorBySummary(summary?: string): string | undefined {
   // https://developers.google.com/apps-script/reference/calendar/event-color
 
   if (!summary || /無駄/.test(summary)) {
-    return CalendarApp.EventColor.RED.toString();
+    return CalendarApp.EventColor.RED.toString()
   }
 
   if (/睡眠/.test(summary)) {
-    return CalendarApp.EventColor.PALE_BLUE.toString();
+    return CalendarApp.EventColor.PALE_BLUE.toString()
   }
 
   // if (/word/.test(summary)) {
@@ -48,7 +48,7 @@ function colorBySummary(summary?: string): string | undefined {
   // }
 
   if (/英会話|英語|Anki|ELSA/.test(summary)) {
-    return CalendarApp.EventColor.ORANGE.toString();
+    return CalendarApp.EventColor.ORANGE.toString()
   }
 
   // if (/word/.test(summary)) {
@@ -60,7 +60,7 @@ function colorBySummary(summary?: string): string | undefined {
       summary
     )
   ) {
-    return CalendarApp.EventColor.GRAY.toString();
+    return CalendarApp.EventColor.GRAY.toString()
   }
 
   // if (/word/.test(summary)) {
