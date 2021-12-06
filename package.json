@@ -2,10 +2,13 @@
   "name": "gccgce",
   "version": "1.0.0",
   "description": "This GAS just changes the color of Google calendar events.",
-  "main": "index.js",
-  "repository": "ssh://git@github.com/cowai/gccgce.git",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "push": "clasp push",
+    "lint": "eslint 'src/**/*.ts'",
+    "fix": "prettier --write 'src/**/*.ts' && eslint --fix 'src/**/*.ts'"
+  },
   "devDependencies": {
     "@types/google-apps-script": "^1.0.41",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
