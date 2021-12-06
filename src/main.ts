@@ -1,4 +1,5 @@
-function updateEventColor() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function updateEventColor(): void {
   const timeMinDate = new Date()
   timeMinDate.setHours(timeMinDate.getHours() - 2)
   const optionalArgs = {
@@ -13,9 +14,9 @@ function updateEventColor() {
 
   const events = Calendar.Events?.list(calendarId, optionalArgs)
   events?.items?.forEach((event: GoogleAppsScript.Calendar.Schema.Event) => {
-    if (!event.colorId) {
+    if (!event.colorId && event.id) {
       event.colorId = colorBySummary(event.summary)
-      Calendar.Events?.update(event, calendarId, event.id!)
+      Calendar.Events?.update(event, calendarId, event.id)
     }
   })
 }
