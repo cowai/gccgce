@@ -3,11 +3,10 @@ function updateEventColor(): void {
   const timeMinDate = new Date()
   timeMinDate.setHours(timeMinDate.getHours() - 2)
   const optionalArgs = {
-    // timeMin: dayjs().subtract(15, 'minute').format(),
     timeMin: timeMinDate.toISOString(),
     showDeleted: false,
     singleEvents: true,
-    maxResults: 5,
+    maxResults: 10,
     orderBy: 'startTime',
   }
   const calendarId = 'primary'
