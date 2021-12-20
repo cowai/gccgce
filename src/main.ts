@@ -39,15 +39,15 @@ function colorBySummary(summary?: string): string | undefined {
   //   return CalendarApp.EventColor.MAUVE.toString();
   // }
 
-  // if (/word/.test(summary)) {
-  //   return CalendarApp.EventColor.PALE_RED.toString();
-  // }
+  if (/家族/.test(summary)) {
+    return CalendarApp.EventColor.PALE_RED.toString()
+  }
 
   // if (/word/.test(summary)) {
   //   return CalendarApp.EventColor.YELLOW.toString();
   // }
 
-  if (/英会話|英語|Anki|ELSA|読書|開発/.test(summary)) {
+  if (/英|Anki|ELSA|読書|開発/.test(summary)) {
     return CalendarApp.EventColor.ORANGE.toString()
   }
 
@@ -56,7 +56,7 @@ function colorBySummary(summary?: string): string | undefined {
   }
 
   if (
-    /(おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|綿棒|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
+    /(おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|浣腸|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
       summary
     )
   ) {

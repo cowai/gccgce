@@ -5,5 +5,5 @@ This GAS just changes the color of Google calendar events.
 
 ### 更新方法
 
-- コード修正
-- `clasp update`
+1. コードを修正する
+2. `yarn push`
