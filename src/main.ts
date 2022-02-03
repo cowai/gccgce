@@ -31,23 +31,23 @@ function colorBySummary(summary?: string): string | undefined {
     return CalendarApp.EventColor.PALE_BLUE.toString()
   }
 
-  // if (/word/.test(summary)) {
-  //   return CalendarApp.EventColor.PALE_GREEN.toString();
-  // }
+  if (/映画|漫画|ゲーム|テレビ/.test(summary)) {
+    return CalendarApp.EventColor.PALE_GREEN.toString()
+  }
 
-  // if (/word/.test(summary)) {
-  //   return CalendarApp.EventColor.MAUVE.toString();
-  // }
+  if (/仕事/.test(summary)) {
+    return CalendarApp.EventColor.MAUVE.toString()
+  }
 
   if (/家族/.test(summary)) {
     return CalendarApp.EventColor.PALE_RED.toString()
   }
 
-  // if (/word/.test(summary)) {
-  //   return CalendarApp.EventColor.YELLOW.toString();
-  // }
+  if (/創作|作曲/.test(summary)) {
+    return CalendarApp.EventColor.YELLOW.toString()
+  }
 
-  if (/英|Anki|ELSA|読書|開発/.test(summary)) {
+  if (/英|Anki|ELSA|読書|開発|プログラミング/.test(summary)) {
     return CalendarApp.EventColor.ORANGE.toString()
   }
 
