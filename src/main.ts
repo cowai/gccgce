@@ -31,7 +31,7 @@ function colorBySummary(summary?: string): string | undefined {
     return CalendarApp.EventColor.PALE_BLUE.toString()
   }
 
-  if (/映画|漫画|ゲーム|テレビ/.test(summary)) {
+  if (/映画|漫画|ゲーム|テレビ|アニメ/.test(summary)) {
     return CalendarApp.EventColor.PALE_GREEN.toString()
   }
 
@@ -47,7 +47,7 @@ function colorBySummary(summary?: string): string | undefined {
     return CalendarApp.EventColor.YELLOW.toString()
   }
 
-  if (/英|Anki|ELSA|読書|開発|プログラミング/.test(summary)) {
+  if (/英|Anki|ELSA|読書|開発|勉強|プログラミング/.test(summary)) {
     return CalendarApp.EventColor.ORANGE.toString()
   }
 
