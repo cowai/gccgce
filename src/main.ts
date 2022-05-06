@@ -56,7 +56,7 @@ function colorBySummary(summary?: string): string | undefined {
   }
 
   if (
-    /(おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|浣腸|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
+    /(育児|おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|浣腸|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
       summary
     )
   ) {
