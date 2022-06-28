@@ -31,10 +31,6 @@ function colorBySummary(summary?: string): string | undefined {
     return CalendarApp.EventColor.PALE_BLUE.toString()
   }
 
-  if (/映画|漫画|ゲーム|テレビ|アニメ/.test(summary)) {
-    return CalendarApp.EventColor.PALE_GREEN.toString()
-  }
-
   if (/仕事/.test(summary)) {
     return CalendarApp.EventColor.MAUVE.toString()
   }
@@ -56,11 +52,15 @@ function colorBySummary(summary?: string): string | undefined {
   }
 
   if (
-    /(育児|家事|おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|浣腸|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
+    /(育児|家事|おむつ|ミルク|あやし|寝かしつけ|ごみ|ゴミ|沐浴|炊事|洗濯|洗い物|荷解き|片付け|買い物)/.test(
       summary
     )
   ) {
     return CalendarApp.EventColor.GRAY.toString()
+  }
+
+  if (/娯楽|映画|漫画|ゲーム|テレビ|アニメ/.test(summary)) {
+    return CalendarApp.EventColor.PALE_GREEN.toString()
   }
 
   // if (/word/.test(summary)) {
